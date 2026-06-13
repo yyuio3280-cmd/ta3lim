@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>السنة الأولى ثانوي</title>
-<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السنة الأولى ثانوي - منصة يوسف التعليمية</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
 </head>
 <body>
-<h1>السنة الأولى ثانوي</h1>
-<div id="viewer"></div>
-<script src="js/viewer.js"></script>
+
+    <nav>
+        <a href="index.html" class="nav-back">⬅ العودة للرئيسية</a>
+    </nav>
+
+    <header>
+        <h1>محتوى السنة الأولى ثانوي</h1>
+        <p>منصة يوسف التعليمية: دروس، فروض واختبارات مصنفة</p>
+        
+        <input type="text" id="searchInput" onkeyup="searchAndFilter()" placeholder="ابحث عن مادة، فرض، أو اختبار هنا...">
+    </header>
+
+    <div class="subjects-menu">
+        <button class="tab-btn active" onclick="loadSubjectPDF('all')">كل المواد</button>
+        <button class="tab-btn" onclick="loadSubjectPDF('arabic')">اللغة العربية</button>
+        <button class="tab-btn" onclick="loadSubjectPDF('math')">الرياضيات</button>
+        <button class="tab-btn" onclick="loadSubjectPDF('physics')">الفيزياء</button>
+    </div>
+
+    <div id="loadingStatus" class="loading-text" style="display: none;">⏳ جاري جلب وقراءة ملف الـ PDF كصور...</div>
+
+    <main id="contentContainer" class="content-container">
+        </main>
+
+    <script src="js/viewer.js"></script>
 </body>
 </html>
